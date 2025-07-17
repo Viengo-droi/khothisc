@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: Báo cáo Chiến lược Khơ Thị Q3/2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #fdf6ec;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+        .kpi-card {
+            background-color: #66545e;
+            color: #ffffff;
+        }
+        .brand-text-dark { color: #66545e; }
+        .brand-text-terracotta { color: #d3816a; }
+        .brand-bg-plum { background-color: #66545e; }
+        .brand-bg-rose { background-color: #a36961; }
+        .brand-bg-terracotta { background-color: #d3816a; }
+        .brand-bg-apricot { background-color: #f9a37a; }
+        .brand-bg-peach { background-color: #ffd49e; }
+        .brand-bg-light { background-color: #fffbf5; }
+        .brand-border-terracotta { border-color: #d3816a; }
+    </style>
+</head>
+<body class="brand-text-dark">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-3xl md:text-5xl font-extrabold brand-text-dark uppercase">Báo Cáo Chiến Lược & Kế Hoạch Hành Động</h1>
+            <p class="text-xl md:text-2xl font-semibold brand-text-terracotta mt-2">KHƠ THỊ SKINCARE & CLINIC - QUÝ 3/2025</p>
+        </header>
+        
+        <section id="challenge" class="mb-16">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-4xl font-bold">Phần 1: Hiện Trạng & Thách Thức Cốt Lõi</h2>
+                <p class="mt-2 max-w-3xl mx-auto text-gray-600">Dù ngân sách quảng cáo Quý 2 rất lớn, hiệu quả doanh thu cuối cùng chưa đạt kỳ vọng do sự thiếu liên kết giữa số lượng và chất lượng lead.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center mb-12">
+                <div class="brand-bg-light p-6 rounded-xl shadow-lg">
+                    <p class="text-lg font-medium text-gray-500">Tổng ngân sách Q2</p>
+                    <p class="text-4xl font-extrabold brand-text-terracotta mt-2">~2.9 TỶ</p>
+                    <p class="text-sm text-gray-500">VNĐ</p>
+                </div>
+                <div class="brand-bg-light p-6 rounded-xl shadow-lg">
+                    <p class="text-lg font-medium text-gray-500">Tổng Lead Q2</p>
+                    <p class="text-4xl font-extrabold brand-text-terracotta mt-2">~7,805</p>
+                    <p class="text-sm text-gray-500">Leads</p>
+                </div>
+                <div class="brand-bg-light p-6 rounded-xl shadow-lg col-span-1 md:col-span-2">
+                     <p class="text-lg font-medium text-gray-500">"Quãng hở" Quy trình Chuyển đổi</p>
+                     <div class="flex items-center justify-center space-x-2 md:space-x-4 mt-4">
+                        <div class="text-center">
+                            <div class="w-16 h-16 brand-bg-apricot text-white rounded-full flex items-center justify-center text-2xl shadow-md">📢</div>
+                            <p class="text-xs mt-1">Quảng cáo</p>
+                        </div>
+                        <div class="text-2xl font-bold brand-text-terracotta">→</div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 brand-bg-apricot text-white rounded-full flex items-center justify-center text-2xl shadow-md">💬</div>
+                            <p class="text-xs mt-1">Nhắn tin</p>
+                        </div>
+                        <div class="text-2xl font-bold brand-text-terracotta">→</div>
+                         <div class="text-center">
+                            <div class="w-16 h-16 brand-bg-apricot text-white rounded-full flex items-center justify-center text-2xl shadow-md">📉</div>
+                            <p class="text-xs mt-1">Rò rỉ Lead</p>
+                        </div>
+                     </div>
+                </div>
+            </div>
+
+            <div class="brand-bg-light p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-bold text-center mb-4">Phân tích Hiệu suất Digital Marketing Quý 2/2025</h3>
+                 <div class="chart-container">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+                <p class="text-center text-sm text-gray-500 mt-4">Biểu đồ cho thấy mối tương quan giữa ngân sách đầu tư và lượng lead thu về mỗi tháng, làm nổi bật chi phí cơ hội và sự cần thiết phải tối ưu hóa chất lượng chuyển đổi.</p>
+            </div>
+        </section>
+
+        <section id="strategy" class="mb-16">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-4xl font-bold">Phần 2: Định Hướng Chiến Lược Mới</h2>
+                <p class="mt-2 max-w-3xl mx-auto text-gray-600">Chuyển đổi trọng tâm từ "Chi phí trên mỗi Lead" (CPL) sang "Lợi nhuận trên chi phí quảng cáo" (ROAS) thông qua mô hình Marketing 2 giai đoạn.</p>
+            </div>
+
+            <div class="brand-bg-light p-6 md:p-8 rounded-xl shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="p-6 rounded-lg brand-bg-plum text-white">
+                        <h3 class="text-2xl font-bold flex items-center"><span class="text-3xl mr-3">📢</span>Giai đoạn 1: TIẾP CẬN</h3>
+                        <p class="mt-2 text-gray-200">Xây dựng tệp đối tượng chất lượng cao, có sự quan tâm thực sự đến dịch vụ cao cấp.</p>
+                        <p class="font-semibold mt-4 mb-2 text-yellow-300">Nội dung chính:</p>
+                        <ul class="list-disc list-inside space-y-1 text-gray-200">
+                            <li>Video cung cấp kiến thức</li>
+                            <li>Bài viết chuyên sâu</li>
+                            <li>Câu chuyện thương hiệu</li>
+                        </ul>
+                         <p class="font-semibold mt-4 mb-2 text-yellow-300">KPIs:</p>
+                        <p class="text-gray-200">Reach, Video Views, CPM.</p>
+                    </div>
+                    <div class="p-6 rounded-lg brand-bg-terracotta text-white">
+                        <h3 class="text-2xl font-bold flex items-center"><span class="text-3xl mr-3">🎯</span>Giai đoạn 2: CHUYỂN ĐỔI</h3>
+                        <p class="mt-2 text-gray-200">Khai thác và chuyển đổi tệp đối tượng chất lượng cao thành các lượt đặt hẹn.</p>
+                        <p class="font-semibold mt-4 mb-2 text-yellow-300">Nội dung chính:</p>
+                        <ul class="list-disc list-inside space-y-1 text-gray-200">
+                            <li>Hình ảnh Before-After</li>
+                            <li>Feedback khách hàng</li>
+                            <li>Ưu đãi giới hạn</li>
+                        </ul>
+                         <p class="font-semibold mt-4 mb-2 text-yellow-300">KPIs:</p>
+                        <p class="text-gray-200">Bookings, Cost/Booking, **ROAS**.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="campaigns" class="mb-16">
+             <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-4xl font-bold">Phần 3: Các Chiến Dịch Trọng Điểm</h2>
+                <p class="mt-2 max-w-3xl mx-auto text-gray-600">Tập trung nguồn lực vào các dịch vụ mũi nhọn và các kênh tiếp cận chiến lược để tối đa hóa hiệu quả.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="brand-bg-light p-6 rounded-xl shadow-lg flex flex-col">
+                    <h3 class="text-xl font-bold mb-4 text-center">Trade Marketing & OOH</h3>
+                    <div class="text-5xl text-center mb-4">🏢</div>
+                    <p class="text-center text-gray-600 flex-grow">Tăng cường sự hiện diện thương hiệu tại khu vực cao cấp, đặc biệt là Thảo Điền, Quận 2.</p>
+                    <ul class="mt-4 list-disc list-inside text-sm space-y-2">
+                        <li>Quảng cáo LCD tại chung cư, văn phòng hạng A.</li>
+                        <li>Hợp tác đặt standee/voucher tại nhà hàng, cafe sang trọng.</li>
+                    </ul>
+                </div>
+                <div class="brand-bg-light p-6 rounded-xl shadow-lg flex flex-col">
+                     <h3 class="text-xl font-bold mb-4 text-center">Dịch Vụ Mũi Nhọn: Diamond Lift 4D</h3>
+                     <div class="chart-container h-64">
+                         <canvas id="diamondLiftChart"></canvas>
+                     </div>
+                     <p class="text-center text-gray-600 mt-4 flex-grow">"Nâng tầm nhan sắc bằng công nghệ tương lai" cho tệp khách hàng nữ lãnh đạo, yêu cầu hiệu quả và an toàn.</p>
+                </div>
+                <div class="brand-bg-light p-6 rounded-xl shadow-lg flex flex-col">
+                    <h3 class="text-xl font-bold mb-4 text-center">Combo Mũi Nhọn: Triple Youth Boost</h3>
+                    <div class="text-5xl text-center mb-4">✨</div>
+                    <p class="text-center text-gray-600 flex-grow">"Khắc phục khuyết điểm toàn diện" với gói dịch vụ giá trị cao, giải quyết nhiều vấn đề cùng lúc.</p>
+                    <ul class="mt-4 space-y-3 font-semibold">
+                        <li class="p-2 brand-bg-rose text-white rounded-md text-center">Ultherapy (Trẻ hóa)</li>
+                        <li class="p-2 brand-bg-terracotta text-white rounded-md text-center">Rejuran (Căng bóng)</li>
+                        <li class="p-2 brand-bg-apricot text-white rounded-md text-center">Skin PR (Xóa nhăn)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="action-plan" class="mb-16">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-4xl font-bold">Phần 4: Kế Hoạch Hành Động Trong 45 Ngày</h2>
+                <p class="mt-2 max-w-3xl mx-auto text-gray-600">Lộ trình triển khai chi tiết, phân rõ trách nhiệm và kết quả cần đạt theo từng giai đoạn.</p>
+            </div>
+            <div class="relative border-l-4 brand-border-terracotta ml-4 md:ml-0">
+                
+                <div class="mb-10 ml-8">
+                    <div class="absolute -left-5 -top-1 w-8 h-8 brand-bg-terracotta rounded-full text-white flex items-center justify-center font-bold">1</div>
+                    <h3 class="text-xl font-bold brand-text-terracotta">Tuần 1-2: NỀN TẢNG & KHỞI ĐỘNG</h3>
+                    <div class="mt-2 brand-bg-light p-4 rounded-lg shadow-md">
+                        <p class="font-semibold">Hoạt động chính:</p>
+                        <ul class="list-disc list-inside mt-2 text-sm space-y-1">
+                            <li>Chuẩn hóa Tracking & Thử nghiệm AI Chatbot.</li>
+                            <li>Rà soát nhân sự, chốt chính sách giá & combo mới.</li>
+                            <li>Khởi chạy chiến dịch Giai đoạn 1 "TIẾP CẬN".</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-10 ml-8">
+                    <div class="absolute -left-5 w-8 h-8 brand-bg-terracotta rounded-full text-white flex items-center justify-center font-bold">2</div>
+                    <h3 class="text-xl font-bold brand-text-terracotta">Tuần 3-4: TĂNG TỐC & TRIỂN KHAI</h3>
+                    <div class="mt-2 brand-bg-light p-4 rounded-lg shadow-md">
+                        <p class="font-semibold">Hoạt động chính:</p>
+                        <ul class="list-disc list-inside mt-2 text-sm space-y-1">
+                            <li>Triển khai Giai đoạn 2 "CHUYỂN ĐỔI" với 70-80% ngân sách.</li>
+                            <li>Đẩy mạnh các dịch vụ mũi nhọn: Diamond Lift & Triple Youth Boost.</li>
+                            <li>Triển khai chăm sóc khách cũ & khởi động Trade Marketing.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ml-8">
+                    <div class="absolute -left-5 w-8 h-8 brand-bg-terracotta rounded-full text-white flex items-center justify-center font-bold">3</div>
+                    <h3 class="text-xl font-bold brand-text-terracotta">Tuần 5-6: TỐI ƯU HÓA & BÁO CÁO</h3>
+                    <div class="mt-2 brand-bg-light p-4 rounded-lg shadow-md">
+                        <p class="font-semibold">Hoạt động chính:</p>
+                        <ul class="list-disc list-inside mt-2 text-sm space-y-1">
+                            <li>Tối ưu ngân sách quảng cáo dựa trên chỉ số ROAS.</li>
+                            <li>Xây dựng kịch bản nuôi dưỡng khách hàng tự động (Email/Zalo).</li>
+                            <li>Tổng kết hiệu quả & lập kế hoạch cho giai đoạn tiếp theo.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <section id="success-factors">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-4xl font-bold">Phần 5: Yếu Tố Ảnh Hưởng Đến Thành Công</h2>
+                <p class="mt-2 max-w-3xl mx-auto text-gray-600">Đây là những điều kiện tiên quyết để đảm bảo kế hoạch được thực thi thành công và mang lại kết quả như kỳ vọng.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="kpi-card p-6 rounded-xl shadow-lg text-center">
+                    <div class="text-5xl mb-3">🤝</div>
+                    <h3 class="text-lg font-bold">Phối hợp Chặt chẽ</h3>
+                    <p class="text-sm mt-2 text-gray-300">Marketing và Kinh doanh phải họp hàng tuần, làm việc trên cùng một bộ KPI (Booking, ROAS).</p>
+                </div>
+                <div class="kpi-card p-6 rounded-xl shadow-lg text-center">
+                    <div class="text-5xl mb-3">🎬</div>
+                    <h3 class="text-lg font-bold">Đầu tư Nội dung</h3>
+                    <p class="text-sm mt-2 text-gray-300">Sản xuất video, bài viết chuyên sâu, có giá trị cao để thu hút đúng tệp khách hàng mục tiêu.</p>
+                </div>
+                <div class="kpi-card p-6 rounded-xl shadow-lg text-center">
+                    <div class="text-5xl mb-3">🤖</div>
+                    <h3 class="text-lg font-bold">Nền tảng Công nghệ</h3>
+                    <p class="text-sm mt-2 text-gray-300">Tự động hóa luồng dữ liệu giữa Ads, Chatbot và CRM để không bỏ lỡ khách hàng và đo lường chính xác.</p>
+                </div>
+                <div class="kpi-card p-6 rounded-xl shadow-lg text-center">
+                    <div class="text-5xl mb-3">👥</div>
+                    <h3 class="text-lg font-bold">Đào tạo Nội bộ</h3>
+                    <p class="text-sm mt-2 text-gray-300">Truyền thông rõ ràng về sự thay đổi và đào tạo nhân viên về quy trình, công cụ mới.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+<script>
+    const CHART_COLORS = {
+        plum: '#66545e',
+        rose: '#a36961',
+        terracotta: '#d3816a',
+        apricot: '#f9a37a',
+        peach: '#ffd49e',
+        white: '#ffffff'
+    };
+
+    function processLabel(label, maxLength = 16) {
+        if (label.length <= maxLength) {
+            return label;
+        }
+        const words = label.split(' ');
+        const lines = [];
+        let currentLine = '';
+        for (const word of words) {
+            if ((currentLine + ' ' + word).trim().length > maxLength) {
+                lines.push(currentLine.trim());
+                currentLine = word;
+            } else {
+                currentLine = (currentLine + ' ' + word).trim();
+            }
+        }
+        if (currentLine) {
+            lines.push(currentLine.trim());
+        }
+        return lines;
+    }
+
+    const defaultTooltipCallback = {
+        plugins: {
+            legend: {
+                labels: {
+                    color: CHART_COLORS.plum,
+                    font: {
+                        family: "'Be Vietnam Pro', sans-serif"
+                    }
+                }
+            },
+            tooltip: {
+                callbacks: {
+                    title: function(tooltipItems) {
+                        const item = tooltipItems[0];
+                        let label = item.chart.data.labels[item.dataIndex];
+                        if (Array.isArray(label)) {
+                            return label.join(' ');
+                        } else {
+                            return label;
+                        }
+                    }
+                }
+            }
+        }
+    };
+    
+    const performanceData = {
+        labels: ['Tháng 4', 'Tháng 5', 'Tháng 6'],
+        datasets: [
+            {
+                label: 'Ngân sách Ads (Tỷ VNĐ)',
+                data: [1.07, 0.843, 0.985],
+                backgroundColor: CHART_COLORS.terracotta,
+                yAxisID: 'y',
+                order: 2
+            },
+            {
+                label: 'Tổng Lead',
+                data: [2481, 2455, 2869],
+                backgroundColor: CHART_COLORS.rose,
+                type: 'line',
+                yAxisID: 'y1',
+                borderColor: CHART_COLORS.rose,
+                tension: 0.2,
+                order: 1
+            }
+        ]
+    };
+    new Chart(document.getElementById('performanceChart'), {
+        type: 'bar',
+        data: performanceData,
+        options: {
+            ...defaultTooltipCallback,
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: { 
+                    ticks: { color: CHART_COLORS.plum } 
+                },
+                y: {
+                    type: 'linear',
+                    display: true,
+                    position: 'left',
+                    title: {
+                        display: true,
+                        text: 'Ngân sách (Tỷ VNĐ)',
+                        color: CHART_COLORS.plum
+                    },
+                    ticks: { color: CHART_COLORS.terracotta }
+                },
+                y1: {
+                    type: 'linear',
+                    display: true,
+                    position: 'right',
+                    title: {
+                        display: true,
+                        text: 'Số lượng Lead',
+                        color: CHART_COLORS.plum
+                    },
+                    grid: {
+                        drawOnChartArea: false, 
+                    },
+                    ticks: { color: CHART_COLORS.rose }
+                }
+            }
+        }
+    });
+
+    const diamondLiftData = {
+        labels: ['1D: Nâng cơ', '2D: Làm đầy', '3D: Tái tạo', '4D: Định hình'],
+        datasets: [{
+            label: 'Tác động của Diamond Lift 4D',
+            data: [25, 25, 25, 25],
+            backgroundColor: [
+                CHART_COLORS.terracotta,
+                CHART_COLORS.apricot,
+                CHART_COLORS.rose,
+                CHART_COLORS.plum
+            ],
+            hoverOffset: 4
+        }]
+    };
+    new Chart(document.getElementById('diamondLiftChart'), {
+        type: 'doughnut',
+        data: diamondLiftData,
+        options: {
+             ...defaultTooltipCallback,
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                ...defaultTooltipCallback.plugins,
+                legend: {
+                    position: 'bottom',
+                     labels: {
+                        color: CHART_COLORS.plum,
+                        font: {
+                            family: "'Be Vietnam Pro', sans-serif"
+                        },
+                        boxWidth: 15,
+                        padding: 15
+                    }
+                }
+            }
+        }
+    });
+
+</script>
+</body>
+</html>
